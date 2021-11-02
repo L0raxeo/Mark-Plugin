@@ -1,5 +1,6 @@
 package com.arkicore.samplePlugin;
 
+import com.arkicore.samplePlugin.init.ProgramStructure;
 import com.arkicore.samplePlugin.utils.Registry;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class SamplePlugin
 
     private void registerRegistries()
     {
-
+        registries.add(new ProgramStructure());
     }
 
     private void preInit() throws IOException

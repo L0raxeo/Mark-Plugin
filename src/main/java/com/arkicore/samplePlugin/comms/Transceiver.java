@@ -8,23 +8,11 @@ import java.io.IOException;
 public class Transceiver
 {
 
-    public static void queueMessage(File file, String data)
+    public static void queueMessage(String data)
     {
         try
         {
-            FileLoader.writeFile(file.getPath(), data);
-        }
-        catch (IOException e)
-        {
-
-        }
-    }
-
-    public static void queueMessage(String path, String data)
-    {
-        try
-        {
-            FileLoader.writeFile(path, data);
+            FileLoader.writeFile("libs/send.txt", data);
         }
         catch (IOException e)
         {
@@ -36,7 +24,7 @@ public class Transceiver
     {
         try
         {
-            return FileLoader.readFile("libs/send.txt");
+            return FileLoader.readFile("libs/receive.txt");
         }
         catch (IOException e)
         {

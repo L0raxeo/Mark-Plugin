@@ -61,4 +61,18 @@ public class FileLoader
         bw.close();
     }
 
+    public static void writeFile(String path, String... dataPerLine) throws IOException
+    {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(path));
+
+        for (String data : dataPerLine)
+        {
+            bw.write(data);
+            bw.newLine();
+        }
+
+        bw.flush();
+        bw.close();
+    }
+
 }
