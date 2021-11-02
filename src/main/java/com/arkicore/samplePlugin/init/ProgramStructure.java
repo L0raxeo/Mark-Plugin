@@ -38,7 +38,7 @@ public class ProgramStructure implements Registry
     }
 
     @Override
-    public void postInit() throws IOException
+    public void postInit()
     {
         boolean receivedPing = false;
 
