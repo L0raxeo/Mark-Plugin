@@ -1,8 +1,7 @@
-package com.arkicore.samplePlugin.comms;
+package com.arkicore.samplePlugin.input.comms;
 
 import com.arkicore.samplePlugin.utils.FileLoader;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Transceiver
@@ -16,7 +15,7 @@ public class Transceiver
         }
         catch (IOException e)
         {
-
+            e.printStackTrace();
         }
     }
 
@@ -24,11 +23,12 @@ public class Transceiver
     {
         try
         {
+            FileLoader.writeFile("libs/receive.txt", "");
             return FileLoader.readFile("libs/receive.txt");
         }
         catch (IOException e)
         {
-
+            e.printStackTrace();
         }
 
         return null;

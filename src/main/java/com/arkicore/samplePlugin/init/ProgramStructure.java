@@ -1,7 +1,7 @@
 package com.arkicore.samplePlugin.init;
 
 import com.arkicore.samplePlugin.Reference;
-import com.arkicore.samplePlugin.comms.Transceiver;
+import com.arkicore.samplePlugin.input.comms.Transceiver;
 import com.arkicore.samplePlugin.utils.FileLoader;
 import com.arkicore.samplePlugin.utils.Registry;
 
@@ -32,9 +32,20 @@ public class ProgramStructure implements Registry
     @Override
     public void init() throws IOException
     {
-        FileLoader.writeFile("libs/info.txt", Reference.NAME.info, Reference.ID.info, Reference.VERSION.info);
-        FileLoader.writeFile("libs/send.txt");
-        FileLoader.writeFile("libs/receive.txt");
+        if (!Files.exists(Paths.get("libs/info.txt")))
+        {
+            FileLoader.writeFile("libs/info.txt", Reference.NAME.info, Reference.ID.info, Reference.VERSION.info);
+        }
+
+        if (!Files.exists(Paths.get("libs/send.txt")))
+        {
+            FileLoader.writeFile("libs/send.txt");
+        }
+
+        if (!Files.exists(Paths.get("libs/receive.txt")))
+        {
+            FileLoader.writeFile("libs/receive.txt");
+        }
     }
 
     @Override
